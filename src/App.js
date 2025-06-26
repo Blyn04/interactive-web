@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import Candle from './components/Candle';
+import MicRecorder from './components/MicRecorder';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [isBlownOut, setIsBlownOut] = useState(false);
+
+  const blowOutCandle = () => {
+    setIsBlownOut(true); // This triggers the animation
+  };
+
+  useEffect(() => {
+    if (isBlownOut) {
+      setTimeout(() => {
+        alert("Happy Birthday!");
+      }, 500);
+    }
+  }, [isBlownOut]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Happy Birthday!</h1>
+      <p>Blow out the candle by making a loud sound!</p>
+      
+      <Candle isBlownOut={isBlownOut} /> {/* Pass isBlownOut to Candle */}
+      
+      {!isBlownOut && (
+        <MicRecorder onBlowOut={blowOutCandle} /> 
+      )}
+      
+      {isBlownOut && <p>🎂 Cake is ready! 🎂</p>}
     </div>
   );
-}
+};
 
 export default App;

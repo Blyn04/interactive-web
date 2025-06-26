@@ -1,0 +1,36 @@
+/* src/styles/Candle.css */
+.candle-container {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.candle {
+  width: 30px;
+  height: 200px;
+  background-color: #ffcc00;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+.candle .flame {
+  width: 20px;
+  height: 30px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+.candle.blown-out .flame {
+  background-color: #808080;
+  transform: translateX(-50%) translateY(20px);
+}
