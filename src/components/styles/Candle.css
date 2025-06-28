@@ -72,7 +72,7 @@
 /* 🕯️ Candle */
 .candle-container {
   position: absolute;
-  top: 60px;
+  top: 155px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -142,6 +142,30 @@
   filter: grayscale(0.8);
 }
 
+/* 💨 Smoke */
+.smoke-wrapper {
+  position: absolute;
+  top: -10px;                /* just above the candle top */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.smoke-puff {
+  position: absolute;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,180,180,0.5) 0%, rgba(120,120,120,0.3) 70%, transparent 100%);
+  opacity: 0;
+}
+
+/* Individual timing offsets so they don't all rise together */
+.puff-1 { animation: puff 1.8s ease-out forwards; }
+.puff-2 { animation: puff 2s   0.2s ease-out forwards; left: -8px; }
+.puff-3 { animation: puff 2.2s 0.4s ease-out forwards; left:  8px; }
+
 /* 🔥 Animations */
 @keyframes flicker {
   0% { transform: translate(-50%, 0) scale(1); box-shadow: 0 0 6px 3px rgba(255, 150, 0, 0.35); }
@@ -157,4 +181,10 @@
 @keyframes pulse {
   0%, 100% { opacity: 0.45; transform: translateX(-50%) scale(1); }
   50% { opacity: 0.75; transform: translateX(-50%) scale(1.1); }
+}
+
+@keyframes puff {
+  0%   { transform: translateY(0)   scale(0.4); opacity: 0.8; }
+  40%  { opacity: 0.6; }
+  100% { transform: translateY(-70px) scale(1.3); opacity: 0; }
 }

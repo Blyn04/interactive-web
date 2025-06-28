@@ -31,17 +31,21 @@ const MicDetector = ({ onBlowOut, threshold = 0.2 }) => {
 
         // Continuous volume check
         const tick = () => {
-          analyser.getByteFrequencyData(data);
+        analyser.getByteFrequencyData(data);
 
-          // Compute average (0–255) → normalize to 0–1
-          const avg = data.reduce((sum, v) => sum + v, 0) / (data.length * 255);
+        const lowFreqData = data.slice(0, data.length / 4); // focus on low freqs
+        const avgLow = lowFreqData.reduce((sum, v) => sum + v, 0) / (lowFreqData.length * 255);
 
-          if (avg > threshold) {
-            onBlowOut(); // 🎉 Candle out!
-            cleanup();   // stop further checks
-          } else {
-            rafId = requestAnimationFrame(tick);
-          }
+        const maxLow = Math.max(...lowFreqData) / 255;
+        const dynamicRange = maxLow - avgLow;
+
+            // Blow-like: loud + flat spectrum = small dynamic range
+            if (avgLow > threshold && dynamicRange < 0.1) {
+                onBlowOut(); // 🎉 Detected blowing!
+                cleanup();
+            } else {
+                rafId = requestAnimationFrame(tick);
+            }
         };
 
         rafId = requestAnimationFrame(tick);
