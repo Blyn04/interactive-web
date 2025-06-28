@@ -3,6 +3,8 @@ import Candle from './components/Candle';
 import MicRecorder from './components/MicRecorder';
 import MicDetector from "./components/MicDetector";
 import './App.css';
+import AnimatedBackground from './components/AnimatedBackground';
+import BackgroundAnimation from './components/BackgroundAnimation';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
@@ -21,6 +23,8 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* <AnimatedBackground/> */}
+      <BackgroundAnimation/>
       <h1>Happy Birthday!</h1>
       <p>Blow out the candle by making a loud sound!</p>
       
