@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Candle from './components/Candle';
 import MicRecorder from './components/MicRecorder';
+import MicDetector from "./components/MicDetector";
 import './App.css';
 
 const App = () => {
@@ -25,9 +26,7 @@ const App = () => {
       
       <Candle isBlownOut={isBlownOut} /> {/* Pass isBlownOut to Candle */}
       
-      {!isBlownOut && (
-        <MicRecorder onBlowOut={blowOutCandle} /> 
-      )}
+      {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
       
       {isBlownOut && <p>🎂 Cake is ready! 🎂</p>}
     </div>
