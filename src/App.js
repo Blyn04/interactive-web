@@ -5,6 +5,7 @@ import MicDetector from "./components/MicDetector";
 import './App.css';
 import AnimatedBackground from './components/AnimatedBackground';
 import BackgroundAnimation from './components/BackgroundAnimation';
+import BirthdayTitle from './components/BirthdayTitle';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
@@ -25,7 +26,7 @@ const App = () => {
     <div className="App">
       {/* <AnimatedBackground/> */}
       <BackgroundAnimation/>
-      <h1>Happy Birthday!</h1>
+      <BirthdayTitle/>
       <p>Blow out the candle by making a loud sound!</p>
       
       <Candle isBlownOut={isBlownOut} /> {/* Pass isBlownOut to Candle */}
