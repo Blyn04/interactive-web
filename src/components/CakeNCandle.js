@@ -3,26 +3,30 @@ import "./styles/CakeNCandle.css";
 
 const CakeNCandle = ({ isBlownOut = false }) => (
   <div className="cake">
-    <div className="plate"></div>
-    <div className="layer layer-bottom"></div>
-    <div className="layer layer-middle"></div>
-    <div className="layer layer-top"></div>
-    <div className="icing"></div>
-    <div className="drip drip1"></div>
-    <div className="drip drip2"></div>
-    <div className="drip drip3"></div>
-    <div className="drip drip4"></div>
+    {/* plate + layers */}
+    <div className="plate" />
+    <div className="layer layer-bottom" />
+    <div className="layer layer-middle" />
+    <div className="layer layer-top" />
+    <div className="icing" />
+
+    {/* drips */}
+    <div className="drip drip1" />
+    <div className="drip drip2" />
+    <div className="drip drip3" />
+    <div className="drip drip4" />
 
     <div className={`candle ${isBlownOut ? "out" : ""}`}>
-      <div className="flame"></div>
+    <div className="flame" />
     </div>
 
+    {/* smoke after blow‑out */}
     {isBlownOut && (
       <div className="smoke-wrapper">
-        <span className="smoke-puff puff-1"></span>
-        <span className="smoke-puff puff-2"></span>
-        <span className="smoke-puff puff-3"></span>
-        <span className="smoke-puff puff-4"></span>
+        <span className="smoke-puff puff-1" />
+        <span className="smoke-puff puff-2" />
+        <span className="smoke-puff puff-3" />
+        <span className="smoke-puff puff-4" />
       </div>
     )}
   </div>
