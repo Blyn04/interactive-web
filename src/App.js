@@ -23,18 +23,25 @@ const App = () => {
   }, [isBlownOut]);
 
   return (
-    <div className="App">
-      {/* <AnimatedBackground/> */}
-      <BackgroundAnimation/>
-      <BirthdayTitle/>
-      <p>Blow out the candle by making a loud sound!</p>
-      
-      <CakeNCandle isBlownOut={isBlownOut} />
-      
-      {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
-      
-      {isBlownOut && <p>🎂 Cake is ready! 🎂</p>}
-    </div>
+    <>
+      <div className="App">
+        {/* <AnimatedBackground/> */}
+        <BackgroundAnimation/>
+        <BirthdayTitle/>
+
+        <CakeNCandle isBlownOut={isBlownOut} />
+        
+        {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
+        
+        {isBlownOut && <p>🎂 Cake is ready! 🎂</p>}
+
+      </div>
+
+      <div className="instruction-card">
+        <h4>Instruction</h4>
+        <p>Blow out the candle by making a loud sound!</p>
+      </div>
+    </>
   );
 };
 

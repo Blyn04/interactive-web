@@ -21,6 +21,7 @@ const CakeNCandle = ({ isBlownOut = false }) => (
         <span className="smoke-puff puff-1"></span>
         <span className="smoke-puff puff-2"></span>
         <span className="smoke-puff puff-3"></span>
+        <span className="smoke-puff puff-4"></span>
       </div>
     )}
   </div>

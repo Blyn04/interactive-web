@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.instruction-card {
+  position: fixed;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff0f5;
+  border: 2px solid #ffb3c1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 105, 153, 0.25);
+  padding: 5px 10px;
+  max-width: 90%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #ad1457;
+  font-size: 15px;
+  z-index: 1000;
+}
