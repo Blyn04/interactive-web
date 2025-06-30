@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Candle from './components/Candle';
 import MicRecorder from './components/MicRecorder';
 import MicDetector from "./components/MicDetector";
 import './App.css';
 import AnimatedBackground from './components/AnimatedBackground';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import BirthdayTitle from './components/BirthdayTitle';
+import CakeNCandle from './components/CakeNCandle';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
@@ -29,7 +29,7 @@ const App = () => {
       <BirthdayTitle/>
       <p>Blow out the candle by making a loud sound!</p>
       
-      <Candle isBlownOut={isBlownOut} /> {/* Pass isBlownOut to Candle */}
+      <CakeNCandle isBlownOut={isBlownOut} />
       
       {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
       
