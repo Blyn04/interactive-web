@@ -93,9 +93,9 @@ body            { background:#ffe5ec; }
   width: 10px;
   height: 25px;
   border-radius: 8px 8px 8px 8px/20px 20px 8px 8px;
-  top: -34px;
+  top: -28px;
   left: 50%;
-  margin-left: -7.5px;
+  margin-left: -6px;
   z-index: 10;
   box-shadow:
     0 0 10px rgba(255, 165, 0, 0.5),
