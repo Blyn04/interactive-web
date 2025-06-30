@@ -54,3 +54,24 @@
   font-size: 15px;
   z-index: 1000;
 }
+
+.cake-ready-message {
+  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+  font-size: 22px;
+  color: #c2185b;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInPop 1s ease-out forwards;
+}
+
+/* Optional fade/pop effect */
+@keyframes fadeInPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

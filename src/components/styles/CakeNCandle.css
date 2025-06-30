@@ -94,25 +94,33 @@ body {
 }
 
 .drip1 {
-  top: 53px;
-  left: 5px;
-  transform: skewY(15deg);
-  height: 48px;
-  width: 40px;
+    top: 60px;
+    left: 5px;
+    transform: skewY(15deg);
+    height: 48px;
+    width: 40px;
 }
 
 .drip2 {
-  top: 69px;
-  left: 181px;
-  transform: skewY(-15deg);
+    top: 70px;
+    left: 185px;
+    transform: skewY(-15deg);
 }
 
 .drip3 {
-  top: 54px;
-  left: 90px;
-  width: 80px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+    top: 55px;
+    left: 110px;
+    width: 56px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.drip4 {
+    top: 80px;
+    left: 55px;
+    width: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .candle {

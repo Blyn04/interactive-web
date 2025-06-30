@@ -33,7 +33,7 @@ const App = () => {
         
         {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
         
-        {isBlownOut && <p>🎂 Cake is ready! 🎂</p>}
+       {isBlownOut && <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>}
 
       </div>
 

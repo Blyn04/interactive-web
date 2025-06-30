@@ -11,6 +11,7 @@ const CakeNCandle = ({ isBlownOut = false }) => (
     <div className="drip drip1"></div>
     <div className="drip drip2"></div>
     <div className="drip drip3"></div>
+    <div className="drip drip4"></div>
 
     <div className={`candle ${isBlownOut ? "out" : ""}`}>
       <div className="flame"></div>
