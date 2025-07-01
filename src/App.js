@@ -6,6 +6,7 @@ import AnimatedBackground from './components/AnimatedBackground';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import BirthdayTitle from './components/BirthdayTitle';
 import CakeNCandle from './components/CakeNCandle';
+import { triggerConfetti, endlessConfetti } from './components/Confetti';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
@@ -16,6 +17,9 @@ const App = () => {
 
   useEffect(() => {
     if (isBlownOut) {
+      triggerConfetti();
+      endlessConfetti(); // Optional: triggers confetti for a few seconds
+
       setTimeout(() => {
         alert("Happy Birthday!");
       }, 500);
