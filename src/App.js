@@ -1,44 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import MicRecorder from './components/MicRecorder';
-import MicDetector from "./components/MicDetector";
 import './App.css';
-import AnimatedBackground from './components/AnimatedBackground';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import BirthdayTitle from './components/BirthdayTitle';
 import CakeNCandle from './components/CakeNCandle';
+import MicDetector from './components/MicDetector';
 import { triggerConfetti, endlessConfetti } from './components/Confetti';
+import birthdaySong from './assets/hbd.mp3';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
+  const [micReady, setMicReady] = useState(false);
 
   const blowOutCandle = () => {
-    setIsBlownOut(true); // This triggers the animation
+    setIsBlownOut(true);
   };
 
   useEffect(() => {
-    if (isBlownOut) {
+    if (isBlownOut && micReady) {
+      const audio = new Audio(birthdaySong);
+      audio.volume = 1.0;
+
+      audio.play().then(() => {
+        console.log("🎵 Birthday song playing");
+      }).catch((e) => {
+        console.warn("❌ Still blocked:", e);
+      });
+
       triggerConfetti();
-      endlessConfetti(); // Optional: triggers confetti for a few seconds
+      endlessConfetti();
 
       setTimeout(() => {
         alert("Happy Birthday!");
       }, 500);
     }
-  }, [isBlownOut]);
+  }, [isBlownOut, micReady]);
 
   return (
     <>
       <div className="App">
-        {/* <AnimatedBackground/> */}
-        <BackgroundAnimation/>
-        <BirthdayTitle/>
-
+        <BackgroundAnimation />
+        <BirthdayTitle />
         <CakeNCandle isBlownOut={isBlownOut} />
-        
-        {!isBlownOut && <MicDetector onBlowOut={blowOutCandle} />}
-        
-       {isBlownOut && <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>}
 
+        {!isBlownOut && (
+          <MicDetector
+            onBlowOut={blowOutCandle}
+            onMicReady={() => setMicReady(true)}
+          />
+        )}
+
+        {isBlownOut && <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>}
       </div>
 
       <div className="instruction-card">
