@@ -51,14 +51,17 @@ const App = () => {
           />
         )}
 
-
         {isBlownOut && (
-          <>
-            <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>
-            <EnvelopeCard /> {/* 👇 Envelope triggers the card */}
-          </>
+          <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>
         )}
       </div>
+
+      {/* Floating envelope rendered above other elements */}
+      {isBlownOut && (
+        <div className="floating-envelope">
+          <EnvelopeCard />
+        </div>
+      )}
 
       <div className="instruction-card">
         <h4>Instruction</h4>

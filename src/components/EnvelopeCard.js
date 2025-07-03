@@ -1,24 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './styles/EnvelopeCard.css';
-import BirthdayCard from './BirthdayCard';
 
 const EnvelopeCard = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
+  const wrapperRef = useRef(null);
+
+  const handleClick = () => {
+    if (!isExpanded) {
+      setIsExpanded(true);
+    } else {
+      setIsOpened(prev => !prev);
+    }
+  };
+
+  // Handle clicks outside the envelope
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target)
+      ) {
+        if (isExpanded || isOpened) {
+          setIsExpanded(false);
+          setIsOpened(false);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isExpanded, isOpened]);
 
   return (
-    <div className="envelope-wrapper">
-      {!isOpened ? (
-        <div className="envelope" onClick={() => setIsOpened(true)}>
-          <div className="flap"></div>
-          <div className="paper"></div> {/* 👈 Paper inside */}
-          <div className="front"></div>
-          <p className="open-text">Click to open</p>
+    <div
+      ref={wrapperRef}
+      className={`envelope-wrapper ${isExpanded ? 'expanded' : ''} ${isOpened ? 'flap' : ''}`}
+      onClick={handleClick}
+    >
+      <div className="envelope">
+        <div className="letter">
+          <div className="text">
+            <strong>Dear Person,</strong>
+            <p>
+              Wishing you a day filled with laughter, love, and sweet memories. 💌<br />
+              May your birthday be as bright and joyful as you!
+            </p>
+          </div>
         </div>
-      ) : (
-        <div className="card-reveal">
-          <BirthdayCard />
-        </div>
-      )}
+      </div>
+      <div className="heart"></div>
     </div>
   );
 };
