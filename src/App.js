@@ -6,6 +6,8 @@ import CakeNCandle from './components/CakeNCandle';
 import MicDetector from './components/MicDetector';
 import { triggerConfetti, endlessConfetti } from './components/Confetti';
 import birthdaySong from './assets/hbd.mp3';
+import BirthdayCard from './components/BirthdayCard'; // 🎈 New Import
+import EnvelopeCard from './components/EnvelopeCard';
 
 const App = () => {
   const [isBlownOut, setIsBlownOut] = useState(false);
@@ -49,7 +51,13 @@ const App = () => {
           />
         )}
 
-        {isBlownOut && <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>}
+
+        {isBlownOut && (
+          <>
+            <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>
+            <EnvelopeCard /> {/* 👇 Envelope triggers the card */}
+          </>
+        )}
       </div>
 
       <div className="instruction-card">
