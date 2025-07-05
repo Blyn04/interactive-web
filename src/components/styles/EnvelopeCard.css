@@ -202,3 +202,63 @@ body {
   z-index: 1; /* Behind the letter, but above base */
   border-radius: 4px;
 }
+
+/* 📱 Tablet screens */
+@media (max-width: 768px) {
+  .envelope-wrapper {
+    width: 220px;
+    height: 170px;
+    bottom: 90px;
+  }
+
+  .envelope {
+    width: 100%;
+    height: 100%;
+  }
+
+  .envelope::before,
+  .envelope::after {
+    border-top-width: 100px;
+    border-right-width: 110px;
+    border-left-width: 110px;
+    border-bottom-width: 70px;
+  }
+
+  .letter {
+    font-size: 9px;
+    padding: 8px;
+  }
+}
+
+/* 📱 Mobile screens */
+@media (max-width: 480px) {
+  .envelope-wrapper {
+    width: 180px;
+    height: 140px;
+    bottom: 80px;
+  }
+
+  .envelope::before,
+  .envelope::after {
+    border-top-width: 80px;
+    border-right-width: 90px;
+    border-left-width: 90px;
+    border-bottom-width: 60px;
+  }
+
+  .letter {
+    font-size: 8px;
+    padding: 6px;
+  }
+
+  .heart {
+    width: 12px;
+    height: 12px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 12px;
+    height: 12px;
+  }
+}
