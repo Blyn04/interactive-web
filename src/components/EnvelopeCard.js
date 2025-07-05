@@ -42,6 +42,7 @@ const EnvelopeCard = () => {
       onClick={handleClick}
     >
       <div className="envelope">
+        <div className="envelope-back" /> {/* ✅ Solid background for the envelope */}
         <div className="letter">
           <div className="text">
             <strong>Dear Person,</strong>
