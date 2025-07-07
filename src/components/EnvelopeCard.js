@@ -45,7 +45,7 @@ const EnvelopeCard = () => {
         <div className="envelope-back" /> {/* ✅ Solid background for the envelope */}
         <div className="letter">
           <div className="text">
-            <strong>Dear Person,</strong>
+            <strong>Maria Nadine Faye Rufo,</strong>
             <p>
               Wishing you a day filled with laughter, love, and sweet memories. 💌<br />
               May your birthday be as bright and joyful as you!

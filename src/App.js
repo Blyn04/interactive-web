@@ -55,7 +55,7 @@ const App = () => {
       endlessConfetti();
 
       setTimeout(() => {
-        alert("Happy Birthday!");
+        // alert("Happy Birthday!");
       }, 500);
     }
   }, [isBlownOut, micReady, audioUnlocked]);
