@@ -1,12 +1,5 @@
-// import React, { useEffect } from "react";
-
-// /**
-//  * MicDetector
-//  * ----------
-//  * – Starts listening immediately.
-//  * – Calls onMicReady once mic access is granted (used to unlock audio).
-//  * – Triggers onBlowOut() once a blow is detected.
-//  */
+// WEB
+//  import React, { useEffect } from "react";
 // const MicDetector = ({ onBlowOut, threshold = 0.12, onMicReady }) => {
 //   useEffect(() => {
 //     let audioCtx = null;
@@ -75,6 +68,7 @@
 
 // export default MicDetector;
 
+// MOBILE
 // import React, { useEffect } from "react";
 
 // const MicDetector = ({ onBlowOut, threshold = 0.08, onMicReady }) => {
@@ -143,13 +137,9 @@
 
 // export default MicDetector;
 
-import React, { useEffect } from "react";
 
-/**
- * Unified MicDetector
- * – Uses desktop config on desktop.
- * – Uses mobile config on mobile browsers.
- */
+// MIC FOR BROWSER DESKTOP AND BROWSER MOBILE
+import React, { useEffect } from "react";
 
 const isMobile = () => {
   return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
