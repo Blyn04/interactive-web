@@ -14,6 +14,16 @@
   margin-left: auto;
   margin-right: auto;
   border: 2px solid #ffc2d1;
+
+  /* ✨ Fade-in effect */
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .candle-count-display span {
