@@ -28,9 +28,9 @@ body            { background:#ffe5ec; }
 
 /* —— icing —— */
 .icing {
-  width: 255px;
-  height: 100px;
-  right:  -2px;
+  width: 258px;
+  height: 108px;
+  right:  -4px;
   top: -3px;
   border-radius: 50%;
   z-index: 2;
@@ -53,7 +53,7 @@ body            { background:#ffe5ec; }
          opacity:0; transform:translateY(-30px) scaleY(.3); animation:dripBounce .5s ease-out .8s forwards; }
 .drip1 { top:60px; left:5px;   transform:skewY(15deg) translateY(-30px) scaleY(.3); width:40px; height:48px; }
 .drip2 { top:70px; left:185px; transform:skewY(-15deg) translateY(-30px) scaleY(.3); }
-.drip3 { top:55px; left:110px; width:56px; border-radius:0 0 40px 40px; }
+.drip3 { top:58px; left:110px; width:56px; border-radius:0 0 40px 40px; }
 .drip4 { top:80px; left:55px;  width:40px; border-radius:0 0 40px 40px; }
 
 .candle {
