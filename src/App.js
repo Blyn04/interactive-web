@@ -8,14 +8,16 @@ import { triggerConfetti, endlessConfetti } from './components/Confetti';
 import birthdaySong from './assets/hbd.mp3';
 import BirthdayCard from './components/BirthdayCard';
 import EnvelopeCard from './components/EnvelopeCard';
+import MicPermissionModal from './components/MicPermissionModal'; // ✅ new import
 
 const App = () => {
+  const [permissionGranted, setPermissionGranted] = useState(false); // ✅ new state
   const [isBlownOut, setIsBlownOut] = useState(false);
   const [micReady, setMicReady] = useState(false);
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const audioRef = useRef(null);
 
-  // Unlock audio once mic is ready
+  // ✅ Unlock audio once mic is ready
   const handleMicReady = () => {
     try {
       const audio = new Audio(birthdaySong);
@@ -67,7 +69,8 @@ const App = () => {
         <BirthdayTitle />
         <CakeNCandle isBlownOut={isBlownOut} />
 
-        {!isBlownOut && (
+        {/* ✅ Show mic detector only after user accepts */}
+        {!isBlownOut && permissionGranted && (
           <MicDetector
             onBlowOut={blowOutCandle}
             onMicReady={handleMicReady}
@@ -89,6 +92,11 @@ const App = () => {
         <h4>Instruction</h4>
         <p>Blow out the candle by making a loud sound!</p>
       </div>
+
+      {/* ✅ Show modal if permission not granted */}
+      {!permissionGranted && (
+        <MicPermissionModal onAllow={() => setPermissionGranted(true)} />
+      )}
     </>
   );
 };
