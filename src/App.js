@@ -17,27 +17,55 @@ const App = () => {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const audioRef = useRef(null);
 
-  const handleMicReady = () => {
-    try {
-      const audio = new Audio(birthdaySong);
-      audio.volume = 1.0;
-      audioRef.current = audio;
+const handleMicReady = () => {
+  try {
+    const audio = new Audio();
+    audio.src = birthdaySong;
+    audio.preload = "auto";
+    audio.load();
+    audio.volume = 1.0;
+    audioRef.current = audio;
 
-      audio.muted = true;
-      audio.play().then(() => {
-        audio.pause();
-        audio.muted = false;
+    // Unlock with muted play
+    audio.muted = true;
+    audio.play().then(() => {
+      audio.pause();
+      audio.muted = false;
+
+      // Detect if mobile
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // Pre-decode audio ONLY on mobile to reduce latency
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        fetch(birthdaySong)
+          .then(res => res.arrayBuffer())
+          .then(buffer => ctx.decodeAudioData(buffer))
+          .then(() => {
+            console.log("✅ Audio pre-decoded on mobile");
+            setAudioUnlocked(true);
+          })
+          .catch(e => {
+            console.warn("❌ Audio decode failed:", e);
+            setAudioUnlocked(true); // fallback unlock
+          });
+      } else {
+        // Instantly unlock for desktop
+        console.log("✅ Audio unlocked on desktop");
         setAudioUnlocked(true);
-        console.log("✅ Audio unlocked");
-      }).catch((e) => {
-        console.warn("❌ Audio unlock failed:", e);
-      });
-    } catch (e) {
-      console.warn("❌ Audio creation failed:", e);
-    }
+      }
 
-    setMicReady(true);
-  };
+    }).catch((e) => {
+      console.warn("❌ Audio unlock failed:", e);
+    });
+
+  } catch (e) {
+    console.warn("❌ Audio creation failed:", e);
+  }
+
+  setMicReady(true);
+};
+
 
   const blowOutCandle = () => {
     setIsBlownOut(true);
