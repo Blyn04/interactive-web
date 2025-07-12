@@ -8,23 +8,21 @@ import { triggerConfetti, endlessConfetti } from './components/Confetti';
 import birthdaySong from './assets/hbd.mp3';
 import BirthdayCard from './components/BirthdayCard';
 import EnvelopeCard from './components/EnvelopeCard';
-import MicPermissionModal from './components/MicPermissionModal'; // ✅ new import
+import MicPermissionModal from './components/MicPermissionModal'; // ✅ modal import
 
 const App = () => {
-  const [permissionGranted, setPermissionGranted] = useState(false); // ✅ new state
+  const [permissionGranted, setPermissionGranted] = useState(false); // ✅ modal state
   const [isBlownOut, setIsBlownOut] = useState(false);
   const [micReady, setMicReady] = useState(false);
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const audioRef = useRef(null);
 
-  // ✅ Unlock audio once mic is ready
   const handleMicReady = () => {
     try {
       const audio = new Audio(birthdaySong);
       audio.volume = 1.0;
       audioRef.current = audio;
 
-      // Attempt to "unlock" it with a muted play
       audio.muted = true;
       audio.play().then(() => {
         audio.pause();
@@ -55,10 +53,6 @@ const App = () => {
 
       triggerConfetti();
       endlessConfetti();
-
-      setTimeout(() => {
-        // alert("Happy Birthday!");
-      }, 500);
     }
   }, [isBlownOut, micReady, audioUnlocked]);
 
@@ -66,10 +60,14 @@ const App = () => {
     <>
       <div className="App">
         <BackgroundAnimation />
-        <BirthdayTitle />
-        <CakeNCandle isBlownOut={isBlownOut} />
 
-        {/* ✅ Show mic detector only after user accepts */}
+        {/* 🎉 Show title only after mic permission */}
+        {permissionGranted && <BirthdayTitle />}
+
+        {/* 🎂 Show cake only after permission */}
+        {permissionGranted && <CakeNCandle isBlownOut={isBlownOut} />}
+
+        {/* 🎤 Start mic listening only after permission */}
         {!isBlownOut && permissionGranted && (
           <MicDetector
             onBlowOut={blowOutCandle}
@@ -93,7 +91,7 @@ const App = () => {
         <p>Blow out the candle by making a loud sound!</p>
       </div>
 
-      {/* ✅ Show modal if permission not granted */}
+      {/* 🔒 Show mic permission modal first */}
       {!permissionGranted && (
         <MicPermissionModal onAllow={() => setPermissionGranted(true)} />
       )}
