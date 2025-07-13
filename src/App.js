@@ -63,7 +63,7 @@ const App = () => {
       <div className="App">
         <BackgroundAnimation />
 
-        {permissionGranted && <BirthdayTitle />}
+        {permissionGranted && isBlownOut && <BirthdayTitle />}
 
         {permissionGranted && <CakeNCandle isBlownOut={isBlownOut} />}
 
