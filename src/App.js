@@ -32,6 +32,7 @@ const App = () => {
       }).catch((e) => {
         console.warn("❌ Audio unlock failed:", e);
       });
+
     } catch (e) {
       console.warn("❌ Audio creation failed:", e);
     }
@@ -47,6 +48,7 @@ const App = () => {
     if (isBlownOut && micReady && audioUnlocked && audioRef.current) {
       audioRef.current.play().then(() => {
         console.log("🎵 Birthday song playing");
+
       }).catch((e) => {
         console.warn("❌ Audio still blocked:", e);
       });
@@ -61,13 +63,10 @@ const App = () => {
       <div className="App">
         <BackgroundAnimation />
 
-        {/* 🎉 Show title only after mic permission */}
         {permissionGranted && <BirthdayTitle />}
 
-        {/* 🎂 Show cake only after permission */}
         {permissionGranted && <CakeNCandle isBlownOut={isBlownOut} />}
 
-        {/* 🎤 Start mic listening only after permission */}
         {!isBlownOut && permissionGranted && (
           <MicDetector
             onBlowOut={blowOutCandle}
@@ -88,10 +87,9 @@ const App = () => {
 
       <div className="instruction-card">
         <h4>Instruction</h4>
-        <p>Blow out the candle by making a loud sound!</p>
+        <p>Blow out the candle by making a big blow!</p>
       </div>
 
-      {/* 🔒 Show mic permission modal first */}
       {!permissionGranted && (
         <MicPermissionModal onAllow={() => setPermissionGranted(true)} />
       )}
