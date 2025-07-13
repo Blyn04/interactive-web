@@ -88,6 +88,7 @@ const App = () => {
       <div className="instruction-card">
         <h4>Instruction</h4>
         <p>Blow out the candle by making a big blow!</p>
+        <p>Don't forget to open the card.</p>
       </div>
 
       {!permissionGranted && (
