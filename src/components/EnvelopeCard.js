@@ -42,13 +42,19 @@ const EnvelopeCard = () => {
       onClick={handleClick}
     >
       <div className="envelope">
-        <div className="envelope-back" /> {/* ✅ Solid background for the envelope */}
+        <div className="envelope-back" /> 
         <div className="letter">
           <div className="text">
-            <strong>Maria Nadine Faye Rufo,</strong>
+            <strong>Dear Maria Nadine Faye Rufo,</strong>
             <p>
-              Wishing you a day filled with laughter, love, and sweet memories. 💌<br />
-              May your birthday be as bright and joyful as you!
+              I can care for you in 4 ways: <br />
+              With words, with silence, with presence, with prayer. <br />
+              Or maybe just 3: <br />
+              With my eyes, my hands, my heart. <br />
+              No, 2 might be stronger: <br />
+              With you, and for you. <br />
+              Or maybe just 1 is all I need: <br />
+              Always.
             </p>
           </div>
         </div>
