@@ -55,7 +55,7 @@ const EnvelopeCard = () => {
               With you, and for you. <br />
               Or maybe just 1 is all I need: <br />
               Always. */}
-              Secret Muna
+              Secret Muna.
             </p>
           </div>
         </div>
