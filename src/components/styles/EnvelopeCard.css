@@ -13,7 +13,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Merriweather', serif;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
 }
 
 .envelope-wrapper {
@@ -165,7 +167,7 @@ body {
 .letter {
   position: absolute;
   width: 80%;
-  left: 10%;
+  left: 7%;
   bottom: 10%;
   background: var(--primary);
   padding: 10px;
@@ -227,6 +229,7 @@ body {
   font-size: 12px;
 }
 
+
 /* 📱 Tablet screens */
 @media (max-width: 768px) {
   .envelope-wrapper {
@@ -263,6 +266,7 @@ body {
     width: 180px;
     height: 140px;
     bottom: 80px;
+    overflow: visible; /* ✅ Allow letter to overflow upward */
   }
 
   .envelope::before,
@@ -274,8 +278,25 @@ body {
   }
 
   .letter {
+    width: 85% !important;
+    left: 7.5% !important;
+    height: 78% !important;
     font-size: 7px;
     padding: 4px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s ease;
+    bottom: 10%; /* ✅ Same base state */
+  }
+
+  .flap .letter {
+    width: 91% !important;
+    left: 4.5% !important;
+    height: 120% !important;   /* ✅ Extend above the envelope */
+    bottom: 150px !important;  /* ✅ Pull upward more */
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    transition-delay: 1s;
   }
 
   .text strong {
@@ -283,7 +304,7 @@ body {
   }
 
   .text p {
-    font-size: 8px;
+    font-size: 8.5px;
   }
 
   .heart {
