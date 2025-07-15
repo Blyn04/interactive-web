@@ -47,15 +47,20 @@ const EnvelopeCard = () => {
           <div className="text">
             <strong>Dear Maria Nadine Faye Rufo,</strong>
             <p>
-              {/* I can care for you in 4 ways: <br />
+              Happy Birthday Nadz!! <br />
+              Thank you for everything, <br />
+              for being exactly who you are, <br />
+              and for letting me stay, <br />
+              even in this quiet way. <br />
+
+              I can care for you in 4 ways, <br />
               With words, with silence, with presence, with prayer. <br />
-              Or maybe just 3: <br />
+              Or maybe just 3, <br />
               With my eyes, my hands, my heart. <br />
-              No, 2 might be stronger: <br />
+              No, 2 might be stronger, <br />
               With you, and for you. <br />
-              Or maybe just 1 is all I need: <br />
-              Always. */}
-              Secret Muna.
+              Or maybe just 1 is all I need, <br />
+              Always.
             </p>
           </div>
         </div>
