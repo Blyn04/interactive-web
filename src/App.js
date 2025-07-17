@@ -6,12 +6,12 @@ import CakeNCandle from './components/CakeNCandle';
 import MicDetector from './components/MicDetector';
 import { triggerConfetti, endlessConfetti } from './components/Confetti';
 import birthdaySong from './assets/hbd.mp3';
-import birthdaySongLongLive from './assets/longlive.mp3';
+import birthdaySongLongLive from './assets/longlive2.mp3';
 import EnvelopeCard from './components/EnvelopeCard';
-import MicPermissionModal from './components/MicPermissionModal'; // ✅ modal import
+import MicPermissionModal from './components/MicPermissionModal'; 
 
 const App = () => {
-  const [permissionGranted, setPermissionGranted] = useState(false); // ✅ modal state
+  const [permissionGranted, setPermissionGranted] = useState(false); 
   const [isBlownOut, setIsBlownOut] = useState(false);
   const [micReady, setMicReady] = useState(false);
   const [audioUnlocked, setAudioUnlocked] = useState(false);
