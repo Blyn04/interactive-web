@@ -6,7 +6,7 @@ import CakeNCandle from './components/CakeNCandle';
 import MicDetector from './components/MicDetector';
 import { triggerConfetti, endlessConfetti } from './components/Confetti';
 import birthdaySong from './assets/hbd.mp3';
-import BirthdayCard from './components/BirthdayCard';
+import birthdaySongLongLive from './assets/longlive.mp3';
 import EnvelopeCard from './components/EnvelopeCard';
 import MicPermissionModal from './components/MicPermissionModal'; // ✅ modal import
 
@@ -19,7 +19,7 @@ const App = () => {
 
   const handleMicReady = () => {
     try {
-      const audio = new Audio(birthdaySong);
+      const audio = new Audio(birthdaySongLongLive);
       audio.volume = 1.0;
       audioRef.current = audio;
 
