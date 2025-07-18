@@ -29,6 +29,7 @@ const App = () => {
         audio.muted = false;
         setAudioUnlocked(true);
         console.log("✅ Audio unlocked");
+
       }).catch((e) => {
         console.warn("❌ Audio unlock failed:", e);
       });
@@ -44,19 +45,32 @@ const App = () => {
     setIsBlownOut(true);
   };
 
-  useEffect(() => {
-    if (isBlownOut && micReady && audioUnlocked && audioRef.current) {
-      audioRef.current.play().then(() => {
-        console.log("🎵 Birthday song playing");
+useEffect(() => {
+  if (isBlownOut && micReady && audioUnlocked && audioRef.current) {
+    const audio = audioRef.current;
+    audio.volume = 0.0; // Start from 0 volume
+    audio.play().then(() => {
+      console.log("🎵 Birthday song playing with fade-in");
 
-      }).catch((e) => {
-        console.warn("❌ Audio still blocked:", e);
-      });
+      // Fade in logic
+      let volume = 0.0;
+      const fadeInterval = setInterval(() => {
+        if (volume < 1.0) {
+          volume = Math.min(volume + 0.01, 1.0); // Increase volume smoothly
+          audio.volume = volume;
+        } else {
+          clearInterval(fadeInterval);
+        }
+      }, 100); // Duration: 100ms steps over ~10s
 
-      triggerConfetti();
-      endlessConfetti();
-    }
-  }, [isBlownOut, micReady, audioUnlocked]);
+    }).catch((e) => {
+      console.warn("❌ Audio still blocked:", e);
+    });
+
+    triggerConfetti();
+    endlessConfetti();
+  }
+}, [isBlownOut, micReady, audioUnlocked]);
 
   return (
     <>
