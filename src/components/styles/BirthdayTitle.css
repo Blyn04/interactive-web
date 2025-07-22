@@ -20,6 +20,13 @@
   animation: fadeIn 2s ease-in-out forwards;
 }
 
+@media (max-width: 768px) {
+  .candle-count-display {
+    margin-top: 100px; 
+    font-size: 25px;
+  }
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
