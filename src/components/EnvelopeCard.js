@@ -60,7 +60,7 @@ const EnvelopeCard = () => {
               No, 2 might be stronger, <br />
               With you, and for you. <br />
               Or maybe just 1 is all I need, <br />
-              Always.
+              Always. (Thank you for being my friend)
             </p>
           </div>
         </div>
