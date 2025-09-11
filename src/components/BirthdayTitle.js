@@ -3,7 +3,7 @@ import "./styles/BirthdayTitle.css";
 
 const BirthdayTitle = () => (
   <div className="candle-count-display">
-    HAPPY BIRTHDAY NADZ!
+    HAPPY BIRTHDAY NADZ!!
   </div>
 );
 
