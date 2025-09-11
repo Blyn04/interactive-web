@@ -293,7 +293,7 @@ body {
   .flap .letter {
     width: 90% !important;
     left: 3.1% !important;
-    height: 120% !important;   /* ✅ Extend above the envelope */
+    height: 125% !important;   /* ✅ Extend above the envelope */
     bottom: 150px !important;  /* ✅ Pull upward more */
     transform: scale(1) !important;
     opacity: 1 !important;
