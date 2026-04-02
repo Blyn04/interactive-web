@@ -5,7 +5,6 @@ import BirthdayTitle from './components/BirthdayTitle';
 import CakeNCandle from './components/CakeNCandle';
 import MicDetector from './components/MicDetector';
 import { triggerConfetti, endlessConfetti } from './components/Confetti';
-import birthdaySong from './assets/hbd.mp3';
 import birthdaySongLongLive from './assets/longlive2.mp3';
 import EnvelopeCard from './components/EnvelopeCard';
 import MicPermissionModal from './components/MicPermissionModal'; 

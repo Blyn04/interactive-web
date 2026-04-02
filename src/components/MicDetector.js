@@ -139,15 +139,16 @@
 
 
 // MIC FOR BROWSER DESKTOP AND BROWSER MOBILE
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const isMobile = () => {
   return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 };
 
 const MicDetector = ({ onBlowOut, onMicReady }) => {
-  const threshold = isMobile() ? 0.08 : 0.12;
-  const fftSize = isMobile() ? 512 : 256;
+  const mobile = isMobile();
+  const threshold = mobile ? 0.08 : 0.12;
+  const fftSize = mobile ? 512 : 256;
 
   useEffect(() => {
     let audioCtx = null;
@@ -179,7 +180,7 @@ const MicDetector = ({ onBlowOut, onMicReady }) => {
         const tick = () => {
           analyser.getByteFrequencyData(data);
 
-          if (isMobile()) {
+          if (mobile) {
             // 🎯 Mobile: low-mid band focus (bins 2–15), tighter range
             const blowBand = data.slice(2, 16);
             const avg = blowBand.reduce((sum, v) => sum + v, 0) / blowBand.length / 255;
@@ -222,7 +223,7 @@ const MicDetector = ({ onBlowOut, onMicReady }) => {
 
     initMic();
     return cleanup;
-  }, [onBlowOut, onMicReady]);
+  }, [onBlowOut, onMicReady, fftSize, threshold, mobile]);
 
   return null;
 };
