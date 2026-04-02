@@ -45,9 +45,9 @@ const EnvelopeCard = () => {
         <div className="envelope-back" /> 
         <div className="letter">
           <div className="text">
-            <strong>Dear Maria Nadine Faye Rufo,</strong>
+            <strong>Dear Ms. Threxy Obenario,</strong>
             <p>
-              Happy Birthday Nadz!! <br />
+              Happy Birthday Masungit!! <br />
               Thank you for everything, <br />
               for being exactly who you are, <br />
               and for letting me stay, <br />
