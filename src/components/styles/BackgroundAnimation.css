@@ -6,7 +6,7 @@
   height: 100%;
   overflow: hidden;
   z-index: -1; /* Behind everything */
-  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  background: linear-gradient(to bottom, #f4fda0, #ffee00);
 }
 
 .circle {
@@ -14,7 +14,7 @@
   bottom: -100px;
   width: 30px;
   height: 30px;
-  background: radial-gradient(circle, rgba(255,192,203,0.4), transparent);
+  background: radial-gradient(circle, rgb(255, 255, 255), transparent);
   border-radius: 50%;
   animation: floatUp 12s linear infinite;
   animation-delay: calc(var(--i) * -1s);

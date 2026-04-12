@@ -12,12 +12,12 @@ body            { background:#ffe5ec; }
 
 /* —— sponge layers —— */
 .layer {
-  width:250px; height:100px; border-radius:50%; background:#ffc2d1;
-  box-shadow:0 2px 0 #fb6f92,0 4px 0 #ff8fab,0 6px 0 #ff8fab,0 8px 0 #ff8fab,
-             0 10px 0 #ff8fab,0 12px 0 #ff8fab,0 14px 0 #ff8fab,
-             0 16px 0 #ff8fab,0 18px 0 #ff8fab,0 20px 0 #ff8fab,
-             0 22px 0 #ff8fab,0 24px 0 #ff8fab,0 26px 0 #ff8fab,
-             0 28px 0 #ff8fab,0 30px 0 #ff8fab;
+  width:250px; height:100px; border-radius:50%; background:#ffffff;
+  box-shadow:0 2px 0 #fff349,0 4px 0 #fff349,0 6px 0 #fff349,0 8px 0 #fff349,
+             0 10px 0 #fff349,0 12px 0 #fff349,0 14px 0 #fff349,
+             0 16px 0 #fff349,0 18px 0 #fff349,0 20px 0 #fff349,
+             0 22px 0 #fff349,0 24px 0 #fff349,0 26px 0 #fff349,
+             0 28px 0 #fff349,0 30px 0 #fff349;
   opacity:0; 
   transform:translateY(-220px); /* drop from above */
 }

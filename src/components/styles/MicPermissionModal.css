@@ -35,7 +35,7 @@
 .start-button {
   padding: 0.6rem 1.4rem;
   font-size: 1rem;
-  background: #ff8fab;
+  background: #01214b;
   color: white;
   border: none;
   border-radius: 8px;
@@ -44,7 +44,7 @@
 }
 
 .start-button:hover {
-  background: #fb6f92;
+  background: #e5ff00;
 }
 
 /* ✅ Responsive tweaks */

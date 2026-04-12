@@ -27,8 +27,8 @@
   bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff0f5;
-  border: 2px solid #ffb3c1;
+  background-color: #ffffff;
+  border: 2px solid #eeff00;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(255, 105, 153, 0.25);
   padding: 1em;
@@ -37,7 +37,7 @@
   min-width: 250px;       /* ✅ Prevent it from becoming too small */
   text-align: center;
   font-family: 'Arial', sans-serif;
-  color: #ad1457;
+  color: #001d52;
   font-size: 1rem;
   z-index: 1000;
 }
