@@ -3,7 +3,6 @@
   padding: 2vh 2vw;
 }
 
-/* Default position */
 .floating-envelope {
   position: absolute;
   bottom: 14vh;
@@ -14,14 +13,12 @@
   max-width: 90vw;
 }
 
-/* Envelope scales inside its wrapper */
 .envelope-wrapper {
   width: 100%;
   max-width: 300px;
   height: auto;
 }
 
-/* Instruction card */
 .instruction-card {
   position: fixed;
   bottom: 5vh;
@@ -32,9 +29,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(255, 105, 153, 0.25);
   padding: 1em;
-  width: 20vw;            /* ✅ Desktop default */
-  max-width: 90vw;        /* ✅ Prevent overflow on mobile */
-  min-width: 250px;       /* ✅ Prevent it from becoming too small */
+  width: 20vw;            
+  max-width: 90vw;       
+  min-width: 250px;     
   text-align: center;
   font-family: 'Arial', sans-serif;
   color: #001d52;
@@ -42,7 +39,6 @@
   z-index: 1000;
 }
 
-/* Cake ready text */
 .cake-ready-message {
   font-family: 'Comic Sans MS', 'Segoe Print', cursive;
   font-size: 1.5rem;
@@ -52,7 +48,6 @@
   animation: fadeInPop 1s ease-out forwards;
 }
 
-/* Animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -75,7 +70,6 @@
   }
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .instruction-card {
     width: 40vw;
