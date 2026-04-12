@@ -46,7 +46,7 @@
 .cake-ready-message {
   font-family: 'Comic Sans MS', 'Segoe Print', cursive;
   font-size: 1.5rem;
-  color: #c2185b;
+  color: #031c6d;
   margin-top: 2vh;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   animation: fadeInPop 1s ease-out forwards;
