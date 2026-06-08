@@ -80,7 +80,7 @@ const App = () => {
         )}
 
         {isBlownOut && (
-          <p className="cake-ready-message">🎂 Cake is ready! 🎂</p>
+          <p className="cake-ready-message">Cake is ready!</p>
         )}
       </div>
 
@@ -92,7 +92,7 @@ const App = () => {
 
       <div className="instruction-card">
         <h4>Instruction</h4>
-        <p>Blow gently toward your mic — or tap the button above!</p>
+        <p>Blow gently toward your mic or tap the button above!</p>
         <p>Don't forget to open the card.</p>
       </div>
 
