@@ -5,24 +5,22 @@
   font-family: 'Arial', sans-serif;
   font-size: 30px;
   font-weight: bold;
-  color: #fff5e3;
-  background-color: #e5ff72;
-  padding: 10px;
+  color: var(--text-on-yellow);
+  background: linear-gradient(135deg, var(--yellow-main), var(--yellow-bright));
+  padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--shadow-soft);
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid #ffffff;
-
-  /* ✨ Fade-in effect */
+  border: 2px solid var(--green-main);
   opacity: 0;
   animation: fadeIn 2s ease-in-out forwards;
 }
 
 @media (max-width: 768px) {
   .candle-count-display {
-    margin-top: 100px; 
+    margin-top: 100px;
     font-size: 25px;
   }
 }
@@ -35,5 +33,5 @@
 
 .candle-count-display span {
   font-weight: bold;
-  color: #AD030F;
+  color: var(--green-deep);
 }

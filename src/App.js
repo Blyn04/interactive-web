@@ -68,10 +68,15 @@ const App = () => {
         {permissionGranted && <CakeNCandle isBlownOut={isBlownOut} />}
 
         {!isBlownOut && permissionGranted && (
-          <MicDetector
-            onBlowOut={blowOutCandle}
-            onMicReady={handleMicReady}
-          />
+          <>
+            <MicDetector
+              onBlowOut={blowOutCandle}
+              onMicReady={handleMicReady}
+            />
+            <button className="blow-button" onClick={blowOutCandle}>
+              🕯️ Tap to blow out the candle
+            </button>
+          </>
         )}
 
         {isBlownOut && (
@@ -87,7 +92,7 @@ const App = () => {
 
       <div className="instruction-card">
         <h4>Instruction</h4>
-        <p>Blow out the candle by making a big blow!</p>
+        <p>Blow gently toward your mic — or tap the button above!</p>
         <p>Don't forget to open the card.</p>
       </div>
 

@@ -1,7 +1,7 @@
 .mic-modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(46, 125, 50, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,44 +10,46 @@
 }
 
 .mic-modal {
-  background: #fffaf3;
+  background: var(--yellow-pale);
   padding: 2rem;
   border-radius: 16px;
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px var(--shadow-soft);
+  border: 2px solid var(--green-main);
 }
 
 .mic-modal h2 {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
-  color: #c2185b;
+  color: var(--green-deep);
 }
 
 .mic-modal p {
   font-size: 1rem;
-  color: #4e3b3b;
+  color: var(--text-dark);
   margin-bottom: 1.2rem;
 }
 
 .start-button {
   padding: 0.6rem 1.4rem;
   font-size: 1rem;
-  background: #01214b;
-  color: white;
+  background: var(--green-main);
+  color: var(--white);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .start-button:hover {
-  background: #e5ff00;
+  background: var(--yellow-main);
+  color: var(--text-on-yellow);
+  transform: scale(1.03);
 }
 
-/* ✅ Responsive tweaks */
 @media (max-width: 480px) {
   .mic-modal {
     padding: 1.2rem;

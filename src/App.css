@@ -19,30 +19,69 @@
   height: auto;
 }
 
+.blow-button {
+  position: fixed;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: var(--text-on-yellow);
+  background: linear-gradient(135deg, var(--yellow-main), var(--yellow-bright));
+  border: 2px solid var(--green-main);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--shadow-soft);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.blow-button:hover {
+  transform: translateX(-50%) scale(1.04);
+  box-shadow: 0 6px 18px rgba(46, 125, 50, 0.35);
+}
+
+.blow-button:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 14px var(--shadow-soft); }
+  50% { box-shadow: 0 4px 22px rgba(102, 187, 106, 0.45); }
+}
+
 .instruction-card {
   position: fixed;
   bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #ffffff;
-  border: 2px solid #ecf38b;
+  background-color: var(--white);
+  border: 2px solid var(--green-main);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 105, 153, 0.25);
+  box-shadow: 0 4px 12px var(--shadow-soft);
   padding: 1em;
-  width: 20vw;            
-  max-width: 90vw;       
-  min-width: 250px;     
+  width: 20vw;
+  max-width: 90vw;
+  min-width: 250px;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  color: #001d52;
+  color: var(--text-dark);
   font-size: 1rem;
   z-index: 1000;
+}
+
+.instruction-card h4 {
+  color: var(--green-deep);
+  margin: 0 0 0.4em;
 }
 
 .cake-ready-message {
   font-family: 'Comic Sans MS', 'Segoe Print', cursive;
   font-size: 1.5rem;
-  color: #031c6d;
+  color: var(--green-deep);
   margin-top: 2vh;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   animation: fadeInPop 1s ease-out forwards;
@@ -71,6 +110,12 @@
 }
 
 @media (max-width: 768px) {
+  .blow-button {
+    top: 65%;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+  }
+
   .instruction-card {
     width: 40vw;
     font-size: 0.95rem;
@@ -84,10 +129,15 @@
   .floating-envelope {
     bottom: 8vh;
   }
-
 }
 
 @media (max-width: 480px) {
+  .blow-button {
+    top: 68%;
+    width: 85vw;
+    font-size: 0.85rem;
+  }
+
   .instruction-card {
     width: 80vw;
     font-size: 0.85rem;

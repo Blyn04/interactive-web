@@ -1,5 +1,5 @@
 /* —— layout basics —— */
-body            { background:#ffe5ec; }
+body            { background: var(--yellow-pale); }
 .cake           { position:absolute; width:250px; height:200px; top:50%; left:50%; margin:-70px 0 0 -125px; }
 .cake > *       { position:absolute; }
 
@@ -13,11 +13,11 @@ body            { background:#ffe5ec; }
 /* —— sponge layers —— */
 .layer {
   width:250px; height:100px; border-radius:50%; background:#ffffff;
-  box-shadow:0 2px 0 #fff349,0 4px 0 #fff349,0 6px 0 #fff349,0 8px 0 #fff349,
-             0 10px 0 #fff349,0 12px 0 #fff349,0 14px 0 #fff349,
-             0 16px 0 #fff349,0 18px 0 #fff349,0 20px 0 #fff349,
-             0 22px 0 #fff349,0 24px 0 #fff349,0 26px 0 #fff349,
-             0 28px 0 #fff349,0 30px 0 #fff349;
+  box-shadow:0 2px 0 #FFD43B,0 4px 0 #FFD43B,0 6px 0 #FFD43B,0 8px 0 #FFD43B,
+             0 10px 0 #FFD43B,0 12px 0 #FFD43B,0 14px 0 #FFD43B,
+             0 16px 0 #FFD43B,0 18px 0 #FFD43B,0 20px 0 #FFD43B,
+             0 22px 0 #FFD43B,0 24px 0 #FFD43B,0 26px 0 #FFD43B,
+             0 28px 0 #FFD43B,0 30px 0 #FFD43B;
   opacity:0; 
   transform:translateY(-220px); /* drop from above */
 }
@@ -57,7 +57,7 @@ body            { background:#ffe5ec; }
 .drip4 { top:80px; left:55px;  width:40px; border-radius:0 0 40px 40px; }
 
 .candle {
-  background-color: #7B020B;
+  background-color: #2E7D32;
   width: 12px;
   height: 35px;
   border-radius: 6px/3px;
@@ -80,7 +80,7 @@ body            { background:#ffe5ec; }
   width: 12px;
   height: 6px;
   border-radius: 50%;
-  background-color: #ad030f;
+  background-color: #66BB6A;
 }
 
 .candle.out .flame {

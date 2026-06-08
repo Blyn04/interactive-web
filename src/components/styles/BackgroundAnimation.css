@@ -5,8 +5,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Behind everything */
-  background: linear-gradient(to bottom, #f4fda0, #ffee00);
+  z-index: -1;
+  background: linear-gradient(to bottom, var(--yellow-cream), var(--green-pale) 60%, var(--yellow-bright));
 }
 
 .circle {
@@ -14,12 +14,16 @@
   bottom: -100px;
   width: 30px;
   height: 30px;
-  background: radial-gradient(circle, rgb(255, 255, 255), transparent);
+  background: radial-gradient(circle, var(--yellow-bright), transparent);
   border-radius: 50%;
   animation: floatUp 12s linear infinite;
   animation-delay: calc(var(--i) * -1s);
   left: calc(var(--i) * 5%);
   transform: scale(calc(0.5 + (var(--i) * 0.05)));
+}
+
+.circle:nth-child(even) {
+  background: radial-gradient(circle, var(--green-bright), transparent);
 }
 
 @keyframes floatUp {
